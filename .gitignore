@@ -19,3 +19,4 @@ doc/api/
 *.js_
 *.js.deps
 *.js.map
+flutter_chat_firebase/android/app/google-services.json
