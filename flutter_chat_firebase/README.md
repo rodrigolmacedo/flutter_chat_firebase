@@ -1,16 +1,6 @@
-# flutter_chat_firebase
+Aplicação utilizando firebase: firestore, authentication, message, storage.
 
-A new Flutter project.
 
-## Getting Started
+Ponto de partida.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Screenshot_1617378415](https://user-images.githubusercontent.com/7695045/113431037-87192a80-93b1-11eb-967b-618a63ae6070.png)
