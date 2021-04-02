@@ -44,6 +44,7 @@
   <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-messaging.js"></script>
   <script>
     // Your web app's Firebase configuration
     var firebaseConfig = {
@@ -54,10 +55,25 @@
       messagingSenderId: "1012485018786",
       appId: "1:1012485018786:web:5af136d0dc2050cb6ef3fb"
     };
+
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
+
+    const messaging = firebase.messaging();
+
+    messaging.onBackgroundMessage((message) => {
+      console.log("onBackgroundMessage", message);
+    });
   </script>
   <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
   <script src="main.dart.js" type="application/javascript"></script>
+  <script>
+    /*if ("serviceWorker" in navigator) {
+      window.addEventListener("load", function () {
+        navigator.serviceWorker.register("/flutter_service_worker.js");
+        navigator.serviceWorker.register("/firebase-messaging-sw.js");
+      });
+    }*/
+  </script>
 </body>
 </html>
