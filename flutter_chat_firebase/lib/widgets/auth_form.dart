@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_chat_firebase/models/auth_data.dart';
 
 class AuthForm extends StatefulWidget {
+  final void Function(AuthData authData) onSubmit;
+
+  AuthForm(this.onSubmit);
+
   @override
   _AuthFormState createState() => _AuthFormState();
 }
@@ -14,7 +18,7 @@ class _AuthFormState extends State<AuthForm> {
     bool isValid = _formKey.currentState.validate();
 
     if (isValid) {
-      print(_authData);
+      widget.onSubmit(_authData);
     }
   }
 
