@@ -1,5 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_chat_firebase/widgets/message_bubble.dart';
 
 class Messages extends StatelessWidget {
   @override
@@ -22,7 +24,12 @@ class Messages extends StatelessWidget {
           reverse: true,
           itemCount: chatDocs.length,
           itemBuilder: (context, index) {
-            return Text(chatDocs[index].get('text'));
+            return MessageBubble(
+              message: (chatDocs[index].get('text')),
+              belongsToMe: chatDocs[index].get('userId') ==
+                  FirebaseAuth.instance.currentUser.uid,
+              key: ValueKey(chatDocs[index].id),
+            );
           },
         );
       },
