@@ -2,13 +2,19 @@ import 'package:flutter/material.dart';
 
 class MessageBubble extends StatelessWidget {
   final String message;
+  final String createdAt;
   final String userImage;
   final bool belongsToMe;
   final String userName;
   final Key key;
 
   const MessageBubble(
-      {this.message, this.belongsToMe, this.key, this.userName, this.userImage})
+      {this.message,
+      this.belongsToMe,
+      this.key,
+      this.userName,
+      this.userImage,
+      this.createdAt})
       : super(key: key);
 
   @override
@@ -74,6 +80,18 @@ class MessageBubble extends StatelessWidget {
             child: CircleAvatar(
               backgroundImage: NetworkImage(userImage),
             )),
+        // Positioned(
+        //   bottom: 15,
+        //   left: belongsToMe ? null : 90,
+        //   right: belongsToMe ? 90 : null,
+        //   child: Text(createdAt ?? "2020",
+        //       style: TextStyle(
+        //           fontSize: 10,
+        //           fontStyle: FontStyle.italic,
+        //           color: belongsToMe
+        //               ? Colors.black
+        //               : Theme.of(context).accentTextTheme.headline1.color)),
+        // )
       ],
     );
   }
